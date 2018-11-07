@@ -5,7 +5,6 @@ class WishlistsController < ApplicationController
   def create
     @wishlist = @user.build_wishlist
     @wishlist = @user.wishlist.listings << @listing
-    byebug
     redirect_to wishlist_path(@user)
     flash[:notice] = "You added #{@listing.title} to your wishlist"
   end

@@ -7,7 +7,7 @@
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button d-none"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="<%= @listing.title %>"
-          data-amount="<%= (@listing.price * 100).to_i %>"
+          data-amount="<%= (@listing.price * 100).to_f %>"
           data-currency="AUD"
           data-locale="auto"></script>
           <script>
