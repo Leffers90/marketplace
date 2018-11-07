@@ -16,6 +16,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
     resize_to_fill(100, 100, :north)
   end
 
+  version :avatar_image do
+    resize_to_fill(85, 85, :north)
+  end
+
   # Choose what kind of storage to use for this uploader:
   # storage :file
   # storage :fog

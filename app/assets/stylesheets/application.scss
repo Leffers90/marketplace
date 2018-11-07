@@ -111,6 +111,30 @@ body {
   font-size: 16px;
 }
 
+textarea.expand {
+  transition: all 3s ease-in-out;
+}
+
+textarea.expand:focus {
+  transition: all 3s ease-in-out;
+  height: 10em;
+}
+
+.img-box {
+  position: relative;
+}
+
+.avatar-image {
+  position: absolute;
+  width: 85px;
+  height: 85px;
+  bottom: 0;
+  left: 50%;
+  background: white;
+  border: 6px solid white;
+  transform: translate(-50%, 50%);
+}
+
 .stripe-button-el {
   display: none !important;
 }

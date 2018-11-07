@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_many :listings, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :replies, dependent: :destroy
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
   has_many :favorite_listings, through: :favorites, source: :favorited, source_type: 'Listing'
 
   validates :name, presence: true

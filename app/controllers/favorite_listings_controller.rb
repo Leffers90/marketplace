@@ -1,4 +1,5 @@
 class FavoriteListingsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_listing
   
   def create
