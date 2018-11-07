@@ -10,7 +10,6 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
-    # render 'show_without_edit' unless  @listing.user_id = current_user.id
     @user_listings = @listing.user.listings.order('created_at DESC').limit(2)
     session[:listing_id] = params[:id]
   end

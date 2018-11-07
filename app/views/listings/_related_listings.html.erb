@@ -1,6 +1,6 @@
-<h3>More Listings By
+<h4>More Listings By
   <span class="text-success"><%= @listing.user.name.split(" ").first %></span>
-</h3>
+</h4>
 
 <div class="row mt-4 mb-5">
   <% @user_listings.each do |user_listing| %>
@@ -10,8 +10,8 @@
       <%= cl_image_tag(user_listing.image.key, options = {class: 'img-fluid'}) %>
       <% end %>
       <div class="card-body d-flex align-items-center justify-content-between">
-        <div>
-          <h5 class="card-title m-0">
+        <div class="mr-1">
+          <h5 class="card-title text-muted m-0">
             <%= user_listing.title %>
           </h5>
         </div>

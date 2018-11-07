@@ -23,7 +23,7 @@
               <%= cl_image_tag(listing.image.key, width: 400, height: 300, crop: :fill, class: 'img-fluid')%>
           <% end %>
           <div class="card-body">
-            <h5 class="card-title"><%= listing.title %></h5>
+            <h4 class="card-title"><%= listing.title %></h4>
             <p><%= limit_characters_helper(listing.description, 150) %></p>
             <hr>
               <div class="d-flex align-items-center justify-content-between">
