@@ -23,8 +23,6 @@ class ChargesController < ApplicationController
     )
 
     flash[:notice] = "Thankyou for purchasing #{@listing.title}, Your payment has been recieved"
-    redirect_to listings_path
-    
     ModelMailer.new_record_notification(@listing).deliver
     redirect_to listings_path
     
