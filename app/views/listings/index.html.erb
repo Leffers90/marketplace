@@ -2,12 +2,13 @@
     <div class="container">
     <% if user_signed_in? %>
       <h1 class="text-white">Welcome, <%= get_user_first_name(current_user.name) %> </h1>
-      <p class="text-white">Teachersource is a Resource Platform. Buy and Sell a variety of lesson plans and content from other teachers within Australia</p>
+      <h5 class="text-white d-flex align-items-center justify-content-center mb-2 mt-2"><%= fa_icon "check-circle", class: 'mr-3 fa-2x' %> Teachersource is the ultimate resource platform.</h5>
+      <h5 class="text-white d-flex align-items-center justify-content-center mb-3"><%= fa_icon "check-circle", class: 'mr-3 fa-2x' %> Exchange resources from other teachers within Australia</h5>
       <p><%= link_to 'CREATE NEW LISTING', new_listing_path, class: "btn btn-lg btn-success px-5 py-3", role: "button" %></p>
     <% else %>
       <h1 class="text-white">Ready to signup?</h1>
-      <p class="text-white">TeacherSource is an Educational Resource Platform. Buy and Sell a variety of lesson plans and content from other teachers within Australia.</p>
-      <h5 class="text-white d-flex align-items-center justify-content-center mb-3"><%= fa_icon "check-circle", class: 'mr-3 fa-2x' %> Join for access to over 3 million resources</h5>
+      <h5 class="text-white d-flex align-items-center justify-content-center mb-2 mt-2"><%= fa_icon "check-circle", class: 'mr-3 fa-2x' %> Teachersource is the ultimate resource platform.</h5>
+      <h5 class="text-white d-flex align-items-center justify-content-center mb-3"><%= fa_icon "check-circle", class: 'mr-3 fa-2x' %> Exchange resources from other teachers within Australia</h5>
       <p><%= link_to 'REGISTER NOW!', new_user_registration_path, class: "btn btn-lg btn-success px-5 py-3", role: "button" %></p>
     <% end %>
   </div>
@@ -27,8 +28,10 @@
           </div>
           
           <div class="card-body text-center mt-5">
-            <h4 class="card-title"><%= listing.title %></h4>
-            <p><%= limit_characters_helper(listing.description, 80) %></p>
+            <h4 class="card-title"><%= limit_characters_helper(listing.title, 18) %></h4>
+            <div class="text-box">
+              <p><%= limit_characters_helper(listing.description, 73) %></p>
+            </div>
             <hr>
               <div class="d-flex align-items-center justify-content-between">
                 <%= link_to 'View Listing', listing, class: "btn btn-success" %>

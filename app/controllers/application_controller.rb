@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
     def setup_search
         @search = Listing.ransack(params[:q])
-        @listings = @search.result.order(created_at: :desc).paginate(page: params[:page], per_page: 9)
+        @listings = @search.result.order(created_at: :desc).paginate(page: params[:page], per_page: 6)
     end
 
 end

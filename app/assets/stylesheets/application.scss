@@ -108,12 +108,20 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Lato:400,700,400italic"
 // Custom styles starts here...
 
 body {
-  font-size: 20px;
+  font-size: 17px;
+}
+
+.text-box {
+  min-height: 4rem;
 }
 
 // Search bar
 .dropdown-menu-search {
   width: 17rem !important;
+}
+
+.form-control-search {
+  border: 0;
 }
 
 // Expand
