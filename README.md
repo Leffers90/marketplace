@@ -2,7 +2,10 @@
 Rails App - Created By Michelle, Mitch and Glenn
 
 ### A link (URL) to your published App
+https://github.com/gfrancis13/marketplace
+
 ### A link to your GitHub repository
+https://radiant-meadow-48071.herokuapp.com/
 
 # Description of your project, including,
 ### Problem definition / purpose
@@ -25,21 +28,40 @@ This is accomplished through a two sided marketplace, TeacherSource. With Teache
 - download resources
 - ask questions, reply to questions as a seller
 
-
-
-
 ### Screenshots
+
 
 ### Tech stack (e.g. html, css, deployment platform, etc)
 - html, css, heroku, ruby on rails, bootstrap
 ### Instructions on how to setup, configure and use your App.
+Make sure you have postgres installed on your machine then:
 
+1. Clone repo to local machine
+2. 
+```ruby
+bundle install
+```
+
+3. 
+```ruby
+rails db:migrate
+```
+
+4.
+```ruby
+rails s
+```
+
+If you would like to populate the database simply run:
+```ruby
+rails db:seed
+```
 
 # Design documentation 
 ### Design process
 - Idea formation
-- research of other platforms
-- 
+- Research of other platforms
+- Market research
 
 ### User stories
 - default user can view all listings
@@ -52,13 +74,8 @@ This is accomplished through a two sided marketplace, TeacherSource. With Teache
 ### A workflow diagram of the user journey/s.
 
 
-
-### Wireframes
---
-
-
 ### Database Entity Relationship Diagrams
-
+[ERD Diagram](https://i.imgur.com/eHYfHBq.png)
 
 
 # Short Answer Questions
