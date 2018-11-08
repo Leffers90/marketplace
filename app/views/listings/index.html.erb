@@ -28,7 +28,7 @@
           
           <div class="card-body text-center mt-5">
             <h4 class="card-title"><%= listing.title %></h4>
-            <p><%= limit_characters_helper(listing.description, 150) %></p>
+            <p><%= limit_characters_helper(listing.description, 80) %></p>
             <hr>
               <div class="d-flex align-items-center justify-content-between">
                 <%= link_to 'View Listing', listing, class: "btn btn-success" %>
