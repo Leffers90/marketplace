@@ -3,8 +3,6 @@
     <div class="col-md-2">
     <% if comment.user.avatar.url.present? %>
       <%= image_tag(comment.user.avatar.url(:comments), class: 'rounded-circle img-fluid' ) %>
-    <% else %>
-      <%= image_tag 'https://via.placeholder.com/100', class: 'rounded-circle img-fluid' %>
     <% end %>
     </div>
     <div class="col-md-10">
@@ -34,16 +32,18 @@
           <div class="d-flex justify-content-between align-items-center">
           <p class="mb-0 text-muted"><%= time_ago_in_words(comment.created_at) %> ago</p>
           <div class="buttons">
-            <%= link_to 'Delete', listing_comment_reply_path({ listing_id: @listing.id, comment_id: comment.id }), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+            <% if current_user == @listing.user %>
+              <%= link_to 'Delete', listing_comment_reply_path({ listing_id: @listing.id, comment_id: comment.id }), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+            <% end %>
           </div>
           </div> 
         </div>
       </div>
     </div>
     <% else %>
-
-    <%= render 'reply/form', listing_id: @listing.id, comment_id: comment.id %>
-        
+    <% if current_user == @listing.user %>
+      <%= render 'reply/form', listing_id: @listing.id, comment_id: comment.id %>
+    <% end %>
   <% end %>
 
 </div>
