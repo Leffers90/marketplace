@@ -23,7 +23,6 @@ class ChargesController < ApplicationController
     )
 
     flash[:notice] = "Thankyou for purchasing #{@listing.title}, Your payment has been recieved"
-    ModelMailer.new_record_notification(@listing).deliver
     redirect_to listings_path
     
   rescue Stripe::CardError => e
