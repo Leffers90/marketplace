@@ -14,12 +14,12 @@
           <div class="dropdown-menu dropdown-menu-search dropdown-menu-right p-3 w-25" role="menu">
             <form id="adv-search">
               <div class="form-group d-block">
-                <%= f.label :grade_cont, class: 'mb-2' %>
+                <%= f.label :grade_cont, 'Grade', class: 'mb-2' %>
                 <%= f.select :grade_cont, options_for_select(grades_helper), {}, class: 'form-control w-100'   %>
               </div>
                 <hr>
               <div class="form-group d-block">
-                <%= f.label :subject_cont, class: 'mb-2' %>
+                <%= f.label :subject_cont, 'Subject', class: 'mb-2' %>
                 <%= f.select :subject_cont, options_for_select(subjects_helper), {}, class: 'form-control w-100' %>
               </div>
               <hr>

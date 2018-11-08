@@ -111,6 +111,10 @@ body {
   font-size: 17px;
 }
 
+.navbar-brand {
+  font-weight: bold;
+}
+
 .text-box {
   min-height: 4rem;
 }
@@ -122,6 +126,8 @@ body {
 
 .form-control-search {
   border: 0;
+  border-top-left-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
 }
 
 // Expand

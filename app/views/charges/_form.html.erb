@@ -15,8 +15,10 @@
           // have more than 1 button of that class
           document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
           </script>
-         <% if user_signed_in? %>
+         <% if user_signed_in? && current_user != @listing.user %>
           <button type="submit" class="btn btn-lg w-100 my-3 py-3 d-block btn-success">BUY NOW</button>
+          <% elsif current_user == @listing.user %>
+          <%= link_to 'Delete Listing', @listing, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-lg btn-block py-3 btn-danger' %>
           <% else %>
           <%= link_to 'REGISTER NOW!', new_user_session_path, class: "btn btn-lg w-100 my-3 py-3 d-block btn-success" %>
           <% end %>
