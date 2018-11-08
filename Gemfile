@@ -72,3 +72,4 @@ gem "rspec-rails", :group => [:development, :test]
 
 gem 'rolify', '~> 5.1'
 
+gem 'ransack', '2.0.0'

@@ -1,3 +1,26 @@
+<%= search_form_for @search do |f| %>
+  <div class="field">
+    <%= f.label :title_cont, "Title contains" %><br />
+    <%= f.text_field :title_cont %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :grade_cont %><br />
+    <%= f.select :grade_cont, options_for_select(grades_helper), {}, class: 'form-control'   %>
+</div>
+  <div class="field">
+    <%= f.label :subject_cont %><br />
+    <%= f.select :subject_cont, options_for_select(subjects_helper), {}, class: 'form-control' %>
+</div>
+  <div class="field">
+    <%= f.label :price_gteq, "Price between" %>
+    <%= f.text_field :price_gteq %>
+    <%= f.label :price_lteq, "and" %>
+    <%= f.text_field :price_lteq %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>
+
 <div class="jumbotron text-center mt-5 bg-primary">
     <div class="container">
     <% if user_signed_in? %>
@@ -12,8 +35,6 @@
     <% end %>
   </div>
 </div>
-
-<p><%= link_to "Advanced Search", new_search_path %></p>
 
 <div class="row">
   <% @listings.each do |listing| %>

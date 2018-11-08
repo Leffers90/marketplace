@@ -4,7 +4,8 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.search(params[:search]).order(created_at: :desc).paginate(page: params[:page], per_page: 9)
+    @search = Listing.ransack(params[:q])
+    @listings = @search.result.order(created_at: :desc).paginate(page: params[:page], per_page: 9)
   end
 
   # GET /listings/1
