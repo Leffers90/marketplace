@@ -26,10 +26,12 @@
       <%= render 'charges/form' %>
       
       <% if user_signed_in? %>
-        <% unless current_user.favorite_listings.exists?(id: @listing.id) %>
-        <%= link_to 'ADD TO WISHLIST', favorite_listings_path(listing_id: @listing), method: :post, class: 'btn btn-block py-2 btn-primary' %>
-        <% else %>
-        <%= link_to 'REMOVE FROM WISHLIST', favorite_listing_path(@listing), method: :delete, class: 'btn btn-block py-2 btn-danger' %>
+        <% if !current_user.listings.include?(@listing) %>
+          <% unless current_user.favorite_listings.exists?(id: @listing.id) %>
+          <%= link_to 'ADD TO WISHLIST', favorite_listings_path(listing_id: @listing), method: :post, class: 'btn btn-block py-2 btn-primary' %>
+          <% else %>
+          <%= link_to 'REMOVE FROM WISHLIST', favorite_listing_path(@listing), method: :delete, class: 'btn btn-block py-2 btn-danger' %>
+          <% end %>
         <% end %>
       <% end %>
 

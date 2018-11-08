@@ -111,6 +111,13 @@ body {
   font-size: 16px;
 }
 
+// Search bar
+.dropdown-menu-search {
+  width: 17rem !important;
+}
+
+// Expand
+
 textarea.expand {
   transition: all 3s ease-in-out;
 }

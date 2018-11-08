@@ -23,6 +23,9 @@
 $(document).ready(function () {
   $("#edit_user").on('submit', function () {
   });
+  $(document).on('click', '.dropdown-menu', function (e) {
+    e.stopPropagation();
+  });
 });
 
 function submitForm() {

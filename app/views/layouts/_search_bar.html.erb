@@ -1,0 +1,40 @@
+<ul class="navbar-nav mx-auto w-50">
+  <%= search_form_for @search, class: 'form-inline d-flex justify-content-center w-100 my-2 my-lg-0', id: 'adv-search' do |f| %>
+
+    <%= f.text_field :title_cont, class: 'form-control form-control-search w-75 h-100 rounded-0', placeholder: 'Search for resources' %>
+
+    <div class="input-group-btn">
+      <div class="btn-group" role="group">
+        <div class="dropdown dropdown-lg rounded-0">
+
+          <button type="button" class="btn btn-lg btn-success dropdown-toggle dropdown-toggle-split rounded-0" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+          </button>
+
+          <div class="dropdown-menu dropdown-menu-search dropdown-menu-right p-3 w-25" role="menu">
+            <form id="adv-search">
+              <div class="form-group d-block">
+                <%= f.label :grade_cont, class: 'mb-2' %>
+                <%= f.select :grade_cont, options_for_select(grades_helper), {}, class: 'form-control w-100'   %>
+              </div>
+                <hr>
+              <div class="form-group d-block">
+                <%= f.label :subject_cont, class: 'mb-2' %>
+                <%= f.select :subject_cont, options_for_select(subjects_helper), {}, class: 'form-control w-100' %>
+              </div>
+              <hr>
+              <div class="form-group d-block">
+                <%= f.label :price_gteq, "Price between" %>
+                <%= f.text_field :price_gteq, class: 'form-control w-100', placeholder: 'min price' %>
+                <%= f.label :price_lteq, "and" %>
+                <%= f.text_field :price_lteq, class: 'form-control w-100', placeholder: 'max price' %>
+              </div>
+            </form>
+          </div>
+
+        </div>
+        <button type="submit" class="btn btn-success"><span class="fa fa-search" aria-hidden="true"></span></button>
+      </div>
+    </div>
+  <% end %>
+</ul>
